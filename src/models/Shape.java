@@ -8,45 +8,47 @@ import java.util.ArrayList;
 public class Shape {
     private ArrayList<Point> points = new ArrayList<Point>();
 
-    public ArrayList<Point> GetPoints(){
+    public ArrayList<Point> getPoints(){
         return points;
     }
 
-    public void AddPoint(Point point){
+    public void addPoint(Point point){
         points.add(point);
     }
-    public double CalculateSide(Point first, Point second){
-        return Math.sqrt((Math.pow((first.GetX() - second.GetX()), 2) + (Math.pow((first.GetY() - second.GetY()), 2))));
-    }
-    public double CalculatePerimeter(){
+
+    public double calculatePerimeter(){
         double perimeter = 0;
         for (int i = 0; i < points.size(); i++) {
             if(i == (points.size() - 1)){
-                perimeter += CalculateSide(points.get(i), points.getFirst());
+                perimeter += points.get(i).getDistance(points.get(0));
                 return perimeter;
             }
-            perimeter += CalculateSide(points.get(i), points.get(i + 1));
+            perimeter += points.get(i).getDistance(points.get(i + 1));
         }
         return perimeter;
     }
 
-    public double GetLongest(){
+    public double getLongest(){
         double max = -Double.MAX_VALUE;
         for (int i = 0; i < points.size(); i++) {
             if(i == (points.size() - 1)){
-                if(max < CalculateSide(points.get(i), points.getFirst())) max = CalculateSide(points.get(i), points.getFirst());
+                if(max < points.get(i).getDistance(points.getFirst())) max = points.get(i).getDistance(points.getFirst());
                 return max;
             }
-            if(max < CalculateSide(points.get(i), points.get(i + 1))) max = CalculateSide(points.get(i), points.get(i + 1));
+            if(max < points.get(i).getDistance(points.get(i + 1))) max = points.get(i).getDistance(points.get(i + 1));
         }
         return max;
     }
 
-    public void GetAverageSide(){
+    public double getAverageSide(){
         double average = 0.0;
         for (int i = 0; i < points.size(); i++) {
-            average += CalculateSide(points.get(i), points.get(i));
+            if(i == points.size() - 1){
+                average += points.get(i).getDistance(points.getFirst());
+                break;
+            }
+            average += points.get(i).getDistance(points.get(i));
         }
-        average /= points.size();
+        return average / points.size();
     }
 }

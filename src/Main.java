@@ -16,10 +16,10 @@ public class Main {
             double y = sc.nextDouble();
 
             Point point = new Point(x, y);
-            shape.AddPoint(point);
+            shape.addPoint(point);
         }
 
-        System.out.println(shape.CalculatePerimeter());
-        System.out.println(shape.GetLongest());
+        System.out.println(shape.calculatePerimeter());
+        System.out.println(shape.getLongest());
     }
 }
