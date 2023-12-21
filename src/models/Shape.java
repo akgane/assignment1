@@ -41,4 +41,12 @@ public class Shape {
         }
         return max;
     }
+
+    public void GetAverageSide(){
+        double average = 0.0;
+        for (int i = 0; i < points.size(); i++) {
+            average += CalculateSide(points.get(i), points.get(i));
+        }
+        average /= points.size();
+    }
 }
