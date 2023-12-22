@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.io.File;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("R:/Programming/Java/test/src/source.txt");
+        File file = new File("src/source.txt");
 
         Scanner sc = new Scanner(file);
         Shape shape = new Shape();
@@ -21,5 +21,6 @@ public class Main {
 
         System.out.println(shape.calculatePerimeter());
         System.out.println(shape.getLongest());
+        System.out.println(shape.getAverageSide());
     }
 }

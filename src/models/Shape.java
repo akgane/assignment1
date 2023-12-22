@@ -20,9 +20,7 @@ public class Shape {
     private double[] getSides(){
         double[] sides = new double[points.size()];
         for (int i = 0; i < sides.length; i++) {
-            int index = (i + 1) % sides.length;
-            double side = points.get(i).getDistance(points.get(index));
-            sides[i] = side;
+            sides[i] = points.get(i).getDistance(points.get((i + 1) % sides.length));
         }
         return sides;
     }

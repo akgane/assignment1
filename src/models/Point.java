@@ -26,7 +26,8 @@ public class Point {
     public double[] getPoints(){
         return new double[]{x, y};
     }
-    public String toString(){
+
+    @Override public String toString(){
         return String.valueOf(x) + " : " + String.valueOf(y);
     }
     public double getDistance(Point target){
