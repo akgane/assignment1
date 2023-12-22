@@ -1,13 +1,10 @@
 package models;
 
-import javax.swing.*;
-import java.lang.reflect.Array;
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Shape {
-    private ArrayList<Point> points = new ArrayList<Point>();
+    private ArrayList<Point> points = new ArrayList<>();
 
     public ArrayList<Point> getPoints(){
         return points;
