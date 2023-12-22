@@ -28,7 +28,7 @@ public class Point {
     }
 
     @Override public String toString(){
-        return String.valueOf(x) + " : " + String.valueOf(y);
+        return x + " : " + y;
     }
     public double getDistance(Point target){
         return Math.sqrt(Math.pow((this.x - target.getX()), 2) + Math.pow((this.y - target.getY()), 2));
